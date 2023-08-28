@@ -10,16 +10,27 @@ const server = app.createServer((req, res) => {
   //   console.log(url);
   if (url === "/") {
     res.write("<html>");
-    res.write("<head> <tittle>User Server</tittle>");
+    res.write("<head> <title>User Server</title>");
     res.write("</head>");
-    res.write("<body>");
+
     res.write(
-      '<form method="post" action="/create_user"><input type="text"/> <button type="submit> send</button> </form>'
+      '<boby><form method="post" action="/create_user"><input type="text"/> <button type="submit"> send</button> </form></boby>'
     );
 
-    res.write("</form>");
     res.write("</html>");
+
+    return res.end();
+  } else if (url === "/user") {
+    res.write("<html>");
+    res.write("<head> <title>User Server</title>");
+    res.write("</head>");
+
+    res.write("<boby><ul><li>Abhishek</li><li>smriti</li></ul></boby>");
+
+    res.write("</html>");
+    return res.end();
   }
+  else if()
 });
 const port = 3000;
 server.listen(port, (req, res) => {
